@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 import com.tareados.Persona.Persona;
 
-
 public class Main {
     // Para capturar datos en java Scanner
     private static Scanner sc = new Scanner(System.in);
-    // Para guardar las instancias de las 5 personas usamos una lista para almacenar los datos
+    // Para guardar las instancias de las 5 personas usamos una lista para almacenar
+    // los datos
     private static List<Persona> personas = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -20,11 +20,17 @@ public class Main {
         System.out.println("------------------------------------------");
 
         capturarPersonas();
+
+        System.out.println("\nInformación:");
         mostrarNombreYGenero();
-        
-        System.out.println("\nReportes:");
+        // System.out.println("\n " );
+
         System.out.println("Promedio de edad: " + calcularPromedioEdad());
+        // System.out.println("\n " );
+
         System.out.println("Cantidad de hombres: " + contarGenero("M"));
+        // System.out.println("\n " );
+
         System.out.println("Cantidad de mujeres: " + contarGenero("F"));
     }
 
@@ -44,15 +50,16 @@ public class Main {
     // Método para leer (nombre, apellido)
     public static String leerTexto(String campo) {
         String infomacion;
-        // 
+        //
         do {
             System.out.print(campo + ": ");
-            infomacion = sc.nextLine().trim(); //lee y borra espacio
-            // Usamos un condicional para evitar que se guarden campos vacios. 
+            infomacion = sc.nextLine().trim(); // lee y borra espacio
+            // Usamos un condicional para evitar que se guarden campos vacios.
             if (infomacion.isEmpty()) {
                 System.out.println("El " + campo.toLowerCase() + " no puede estar vacío.");
             }
-            // Si determina que esta vacio, usamos un ciclo repetitivo para asegurarnos que usuario vuelva a escribir el campo hasta que cumpla con los requisitos. 
+            // Si determina que esta vacio, usamos un ciclo repetitivo para asegurarnos que
+            // usuario vuelva a escribir el campo hasta que cumpla con los requisitos.
         } while (infomacion.isEmpty());
         return capitalizar(infomacion);
     }
@@ -62,7 +69,10 @@ public class Main {
         int año, mes, dia;
         while (true) {
 
-            // Para que el usuario ingrese su fecha de nacimiento, como en una pagina web donde se despliega un calendario, pero aquí no tenemos eso, por eso decí separar la fecha, y especificar el formato aceptado. Después, lo convertimos en un objeto de tipo LocalDate. 
+            // Para que el usuario ingrese su fecha de nacimiento, como en una pagina web
+            // donde se despliega un calendario, pero aquí no tenemos eso, por eso decí
+            // separar la fecha, y especificar el formato aceptado. Después, lo convertimos
+            // en un objeto de tipo LocalDate.
             año = leerEntero("Año de nacimiento (YYYY)");
             mes = leerEntero("Mes de nacimiento (1-12)");
             dia = leerEntero("Día de nacimiento (1-31)");
@@ -79,7 +89,7 @@ public class Main {
 
     // Método para leer un entero (año, mes, día)
     public static int leerEntero(String campo) {
-        
+
         int valor = -1;
         while (valor < 0) {
             System.out.print(campo + ": ");
@@ -103,7 +113,7 @@ public class Main {
         String genero;
         do {
             System.out.print("Género (M/F): ");
-            genero = sc.nextLine().trim().toUpperCase(); // Lee y formatea 
+            genero = sc.nextLine().trim().toUpperCase(); // Lee y formatea
             // Validamos que el usuario haya digitado m o f
             if (!genero.equals("M") && !genero.equals("F")) {
                 System.out.println("Género inválido. Debe ser M o F.");
@@ -116,21 +126,23 @@ public class Main {
 
     // Método para formatear Texto ( "june" -> "June")
     public static String capitalizar(String texto) {
-        if (texto.isEmpty()) return texto;
+        if (texto.isEmpty())
+            return texto;
         return texto.substring(0, 1).toUpperCase() + texto.substring(1).toLowerCase();
     }
 
     // Método para mostrar nombres y géneros
     public static void mostrarNombreYGenero() {
-        System.out.println("\nClientes o Interesados ingresados hoy:");
+        System.out.println("\nPersonas ingresadas:");
         for (Persona p : personas) {
-            System.out.println(p.getNombre() + " " + p.getApellido() + " - Género: " + p.getGenero());
+            System.out.println(p.getNombre() + " - Género: " + p.getGenero());
         }
     }
 
     // Método para calcular el promedio de edades
     public static int calcularPromedioEdad() {
-        if (personas.isEmpty()) return 0;
+        if (personas.isEmpty())
+            return 0;
         int suma = 0;
         for (Persona p : personas) {
             suma += p.getEdad();

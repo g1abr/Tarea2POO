@@ -15,12 +15,8 @@ public class Main {
     private static List<Persona> personas = new ArrayList<>();
 
     public static void main(String[] args) {
-// Para darle sentido al programa, decí darle un proposito.
-// Es software que ayuda a la gente marketing, mostrando metricas de los clientes o interesados(los que llenan "el formulario con sus datos"). Con los metodos establecidos en la actividad podriamos cumplir estos objetivos para el equipo de trabajo pueda crear estrategias y venter más. 
 
-        System.out.println("¡Bienvenidos al software Soluciones!");
-        System.out.println("Donde hay personas, vemos posibles clientes.");
-        System.out.println("Ingresa los datos de los interesados:");
+        System.out.println("Ingresa los datos de las personas:");
         System.out.println("------------------------------------------");
 
         capturarPersonas();

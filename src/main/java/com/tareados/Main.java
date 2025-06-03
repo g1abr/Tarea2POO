@@ -47,7 +47,7 @@ public class Main {
                     break;
 
                 case 5:
-                    System.out.println("Contando Mujeres: " + lista.ContarMujeres()); // ✅ Esto sí muestra el resultado
+                    System.out.println("Contando Mujeres: " + lista.ContarMujeres());
                     break;
                 case 6:
                     System.out.println("Total personas registradas: " + lista.totalPersonas());

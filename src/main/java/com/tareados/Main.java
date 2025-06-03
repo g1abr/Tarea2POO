@@ -39,7 +39,7 @@ public class Main {
                     lista.listarPersonas();
                     break;
                 case 3:
-                    System.out.printf("📊 Promedio de edades: %.2f años\n", lista.promedioEdades());
+                    System.out.printf(" Promedio de edades: %.2f años\n", lista.promedioEdades());
                     break;
                 case 4:
                     System.out.println("Contando Hombres: " + lista.ContarHombres());

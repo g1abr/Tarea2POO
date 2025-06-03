@@ -15,8 +15,7 @@ public class Main {
         int opcion;
 
         do {
-            System.out.println("\n");
-
+            
             System.out.println("\n==== MENÚ ====");
             System.out.println("1. Crear persona");
             System.out.println("2. Mostrar personas");
@@ -25,10 +24,11 @@ public class Main {
             System.out.println("5. Contar por Mujeres");
             System.out.println("6. Total de personas");
             System.out.println("7. Salir");
-
+            
             System.out.print("Opción: ");
             opcion = sc.nextInt();
             sc.nextLine();
+            System.out.println("\n");
 
             switch (opcion) {
                 case 1:

@@ -9,7 +9,7 @@ public class Persona {
     // Atributos requeridos en la tarea (nombre, apellido genero y edad)
     private String nombre;
     private String apellido;
-    private String genero;
+    private Genero genero;
     private LocalDate fechaNacimiento; // edad
 
     // Metodos constructores
@@ -18,7 +18,7 @@ public class Persona {
 
     }
 // Con todos los parametros de la clase persona 
-    public Persona(String nombre, String apellido, String genero, LocalDate fechaNacimiento) {
+    public Persona(String nombre, String apellido, Genero genero, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.genero = genero;
@@ -42,14 +42,14 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public String getGenero() {
+     public Genero getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(Genero genero) {
         this.genero = genero;
     }
-// Si quiero cambiar la fecha de nacimiento, por si el usuario se equivoco. 
+ 
   public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
@@ -62,6 +62,9 @@ public class Persona {
     public int getEdad() {
         return Period.between(fechaNacimiento, LocalDate.now()).getYears();
     }
-
+// 
+    public String toString(){
+        return "Nombre: " + nombre + ", Apellido: " + apellido + ", Genero: " + genero ;
+    }
 
 }
